@@ -10,7 +10,8 @@ import org.junit.Test
 class NumbersTests {
 
     @Test
-    fun initInteger() {}
+    fun initInteger() {
+    }
 
 
 }
