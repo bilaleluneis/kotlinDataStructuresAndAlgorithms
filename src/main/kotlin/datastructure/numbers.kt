@@ -1,9 +1,9 @@
 package datastructure
 
 /**
- * @author Bilal El Uneis
+ * @author Bilal El Uneis and Jieshu Wang
  * @since Sept 2020
- * bilaleluneis@gmail.com
+ * bilaleluneis@gmail.com, foundwonder@gmail.com
  */
 
 interface NumberType<T> {
@@ -12,4 +12,17 @@ interface NumberType<T> {
 }
 
 
+class IntegerType(private val integerValue: Int): NumberType<Int> {
+    override val value: Int get() = integerValue
+    override fun plus(another: NumberType<Int>): IntegerType {
+        return IntegerType(this.value + another.value)
+    }
+}
+
+class FloatType(private val floatValue: Float): NumberType<Float> {
+    override val value: Float get() = floatValue
+    override fun plus(another: NumberType<Float>): FloatType {
+        return FloatType(this.value + another.value)
+    }
+}
 
