@@ -14,15 +14,11 @@ interface NumberType<T> {
 
 class IntegerType(private val integerValue: Int): NumberType<Int> {
     override val value: Int get() = integerValue
-    override fun plus(another: NumberType<Int>): IntegerType {
-        return IntegerType(this.value + another.value)
-    }
+    override fun plus(another: NumberType<Int>) = IntegerType(this.value + another.value)
 }
 
 class FloatType(private val floatValue: Float): NumberType<Float> {
     override val value: Float get() = floatValue
-    override fun plus(another: NumberType<Float>): FloatType {
-        return FloatType(this.value + another.value)
-    }
+    override fun plus(another: NumberType<Float>) =  FloatType(this.value + another.value)
 }
 
