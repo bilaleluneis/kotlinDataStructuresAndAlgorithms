@@ -13,4 +13,25 @@ interface MathOperation<T> {
     operator fun invoke(vararg params: T): T
 }
 
+class BinaryOperation<T>(private val opName: String, private val op: (T, T) -> T) : MathOperation<T> {
+    override val name: String
+        get() = opName
+
+    override fun invoke(vararg params: T): T = when (params.size) {
+        2 -> op(params[0], params[1])
+        else -> throw Exception("Binary operation takes exactly two parameters.")
+    }
+}
+
+class UnaryOperation<T>(private val opName: String, private val op: (T) -> T) : MathOperation<T> {
+    override val name: String
+        get() = opName
+
+    override fun invoke(vararg params: T): T = when (params.size) {
+        1 -> op(params[0])
+        else -> throw Exception("Unary operation takes exactly one parameter.")
+    }
+}
+
+
 
