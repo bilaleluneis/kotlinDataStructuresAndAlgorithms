@@ -8,6 +8,7 @@ import java.lang.Exception
  * bilaleluneis@gmail.com, foundwonder@gmail.com
  */
 
+
 interface MathOperation<T> {
     val name: String
     operator fun invoke(vararg params: T): T
